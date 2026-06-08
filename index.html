@@ -1,0 +1,666 @@
+<!doctype html>
+
+<html class="dark" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DevArchitect | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e5e2e1;
+        scroll-behavior: smooth;
+      }
+      .neon-glow:hover {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        border-color: #4edea3;
+      }
+      .code-container {
+        background-color: #050505;
+        border: 1px solid #262626;
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      /* Custom scrollbar for IDE-like feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #262626;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #353534;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#10b981",
+              "on-surface-variant": "#bbcabf",
+              "primary-fixed": "#6ffbbe",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#ffb95f",
+              "secondary-container": "#0566d9",
+              "on-tertiary-fixed": "#2a1700",
+              tertiary: "#ffb95f",
+              "on-error": "#690005",
+              "on-primary": "#003824",
+              "surface-variant": "#353534",
+              "error-container": "#93000a",
+              error: "#ffb4ab",
+              "inverse-surface": "#e5e2e1",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary-fixed-variant": "#653e00",
+              secondary: "#adc6ff",
+              "inverse-on-surface": "#313030",
+              "on-secondary": "#002e6a",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed-variant": "#005236",
+              "on-secondary-container": "#e6ecff",
+              "surface-bright": "#3a3939",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#004395",
+              surface: "#131313",
+              "on-background": "#e5e2e1",
+              "on-surface": "#e5e2e1",
+              background: "#131313",
+              "on-primary-container": "#00422b",
+              "on-tertiary-container": "#523200",
+              "secondary-fixed-dim": "#adc6ff",
+              "tertiary-fixed": "#ffddb8",
+              "surface-tint": "#4edea3",
+              "inverse-primary": "#006c49",
+              "tertiary-container": "#e29100",
+              "secondary-fixed": "#d8e2ff",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#001a42",
+              "on-primary-fixed": "#002113",
+              "on-tertiary": "#472a00",
+              "primary-fixed-dim": "#4edea3",
+              primary: "#4edea3",
+              "outline-variant": "#3c4a42",
+              outline: "#86948a",
+              "surface-container-low": "#1c1b1b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-mobile": "20px",
+              unit: "4px",
+              gutter: "24px",
+              "container-max": "1280px",
+              "margin-desktop": "80px",
+            },
+            fontFamily: {
+              "code-md": ["Fira Code", "monospace"],
+              "headline-xl-mobile": ["Inter", "sans-serif"],
+              "headline-md": ["Inter", "sans-serif"],
+              "headline-sm": ["Inter", "sans-serif"],
+              "body-lg": ["Inter", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"],
+              "headline-xl": ["Inter", "sans-serif"],
+              "headline-lg": ["Inter", "sans-serif"],
+              "label-caps": ["JetBrains Mono", "monospace"],
+            },
+            fontSize: {
+              "code-md": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-xl-mobile": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-xl": [
+                "64px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.04em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-body-md text-on-surface">
+    <!-- Top Navigation Bar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300 ease-in-out h-20"
+    >
+      <div
+        class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-full"
+      >
+        <div
+          class="font-headline-sm text-headline-sm text-primary font-bold tracking-tighter"
+        >
+          DevArchitect
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+            href="#about"
+            >Sobre</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            href="#what-is-dev"
+            >Oque é um Dev</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            href="#projects"
+            >Projetos</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+            href="#code"
+            >Exemplos de Código</a
+          >
+          <a class="_blank" href="https://web.whatsapp.com/">Contato</a>
+        </div>
+        <button
+          class="bg-primary text-on-primary px-6 py-2 font-bold hover:bg-primary-container transition-all duration-300 rounded-sm"
+        >
+          <a href="https://www.instagram.com/Agnelo.ss/" class="_blank"
+            >Me contrate</a
+          >
+        </button>
+      </div>
+    </nav>
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[921px] flex items-center overflow-hidden"
+        id="about"
+      >
+        <div
+          class="max-w-container-max mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center"
+        >
+          <div class="md:col-span-7 z-10">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-sm mb-6"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-primary animate-pulse"
+              ></span>
+              <span
+                class="font-label-caps text-label-caps text-primary uppercase"
+                >Disponível para Projetos</span
+              >
+            </div>
+            <h1
+              class="font-headline-xl text-headline-xl text-on-surface mb-6 md:leading-[1.1]"
+            >
+              Construindo o Futuro,
+              <span class="text-primary">Linha por Linha</span>
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl"
+            >
+              Sou um Desenvolvedor Full Stack especializado em arquitetar
+              experiências digitais robustas, escaláveis e centradas no usuário.
+              Transformo problemas complexos em código limpo e elegante.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-primary text-on-primary px-8 py-4 font-bold rounded-sm flex items-center gap-2 hover:brightness-110 transition-all"
+              >
+                Ver Projetos
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <button
+                class="border border-outline px-8 py-4 font-bold rounded-sm hover:bg-white/5 transition-all"
+              >
+                Download CV
+              </button>
+            </div>
+          </div>
+          <div class="md:col-span-5 relative hidden md:block">
+            <div
+              class="relative w-full aspect-square bg-surface-container-high border border-outline-variant/30 rounded-xl overflow-hidden neon-glow transition-all duration-500"
+            >
+              <img
+                class="w-full h-full object-cover opacity-60"
+                data-alt="A high-contrast, professional close-up of a developer's workstation at night. The scene features a high-end mechanical keyboard with subtle emerald green backlighting and a dual-monitor setup displaying complex lines of code. The atmosphere is moody and dark-mode focused, with deep blacks and sharp neon green highlights reflecting off a clean desk surface. The overall style is technical, minimalist, and brutalist."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARV8usnxtBH7oK1-YPrv1B4DcCgrk3B5GwjP-1d2BrSGuw0RjCZXrOhZzcrwW4svJvArygC_19OH8pb6-R2qgOX4WU8nsKNq12SV49TxifmBfeXKN30si_dlhiDvwLyhl4loVaJ9jCwqb61UCRoh7-zMJmxEv7uto091PoTR8bdApdu5TjdPdjGMA6_7-KiLSbohwIqfJukj68NsbYKq-Zsa58zUahRk8kcGCNXfVUjWlxP9xJzDD4cSdhmff1s3qLGCrWdqtnfvuE"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"
+              ></div>
+              <!-- Decorative Code Floating UI -->
+              <div
+                class="absolute top-8 -right-4 bg-surface-container-highest p-4 border border-outline-variant rounded-sm shadow-2xl animate-bounce"
+                style="animation-duration: 4s"
+              >
+                <div class="flex gap-1 mb-2">
+                  <div class="w-2 h-2 rounded-full bg-error"></div>
+                  <div class="w-2 h-2 rounded-full bg-tertiary"></div>
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <code class="font-code-md text-code-md text-primary"
+                  >npm install future</code
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Background Decorative Element -->
+        <div
+          class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent -z-10"
+        ></div>
+      </section>
+      <!-- What is a Dev Section -->
+      <section class="py-[120px] bg-surface-container-lowest" id="what-is-dev">
+        <div class="max-w-container-max mx-auto px-margin-desktop">
+          <div class="text-center mb-20">
+            <h2 class="font-headline-lg text-headline-lg mb-4">
+              O que é um <span class="text-primary-container">Dev?</span>
+            </h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Logic Card -->
+            <div
+              class="p-8 bg-surface-container border border-outline-variant/20 hover:border-primary/40 transition-all group"
+            >
+              <div
+                class="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >terminal</span
+                >
+              </div>
+              <h3 class="font-headline-sm text-headline-sm mb-4">
+                Solucionador de Problemas
+              </h3>
+              <p class="text-on-surface-variant font-body-md text-body-md">
+                Mais do que escrever código, um desenvolvedor é um estrategista.
+                Analisamos desafios reais e os decompomos em componentes lógicos
+                para criar soluções eficientes.
+              </p>
+            </div>
+            <!-- Creativity Card -->
+            <div
+              class="p-8 bg-surface-container border border-outline-variant/20 hover:border-primary/40 transition-all group"
+            >
+              <div
+                class="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >palette</span
+                >
+              </div>
+              <h3 class="font-headline-sm text-headline-sm mb-4">
+                Criatividade Digital
+              </h3>
+              <p class="text-on-surface-variant font-body-md text-body-md">
+                O código é o nosso pincel. Usamos linguagens e frameworks para
+                pintar interfaces intuitivas e fluxos de trabalho que facilitam
+                a vida de milhares de usuários.
+              </p>
+            </div>
+            <!-- Builder Card -->
+            <div
+              class="p-8 bg-surface-container border border-outline-variant/20 hover:border-primary/40 transition-all group"
+            >
+              <div
+                class="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >architecture</span
+                >
+              </div>
+              <h3 class="font-headline-sm text-headline-sm mb-4">
+                Arquiteto de Sistemas
+              </h3>
+              <p class="text-on-surface-variant font-body-md text-body-md">
+                Construímos fundações invisíveis mas poderosas. Da estrutura do
+                banco de dados à velocidade da renderização, garantimos que o
+                ecossistema digital seja sólido.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Code Snippets Section -->
+      <section class="py-[120px]" id="code">
+        <div class="max-w-container-max mx-auto px-margin-desktop">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end gap-gutter mb-12"
+          >
+            <div class="max-w-xl">
+              <h2 class="font-headline-lg text-headline-lg mb-6">
+                Exemplos de <span class="text-primary">Código</span>
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Transparência no processo técnico. Aqui estão alguns snippets
+                que exemplificam meu padrão de escrita: limpo, comentado e
+                otimizado.
+              </p>
+            </div>
+            <div
+              class="flex gap-2 bg-surface-container p-1 rounded-sm border border-outline-variant/30"
+            >
+              <button
+                class="tab-btn px-4 py-2 font-label-caps text-label-caps bg-primary text-on-primary"
+                id="tab-html"
+                onclick="switchTab('html')"
+              >
+                HTML
+              </button>
+              <button
+                class="tab-btn px-4 py-2 font-label-caps text-label-caps text-on-surface-variant hover:text-primary"
+                id="tab-css"
+                onclick="switchTab('css')"
+              >
+                CSS
+              </button>
+              <button
+                class="tab-btn px-4 py-2 font-label-caps text-label-caps text-on-surface-variant hover:text-primary"
+                id="tab-js"
+                onclick="switchTab('js')"
+              >
+                JAVASCRIPT
+              </button>
+            </div>
+          </div>
+          <div class="code-container rounded-xl overflow-hidden shadow-2xl">
+            <div
+              class="bg-[#1a1a1a] px-6 py-3 flex items-center justify-between border-b border-outline-variant/30"
+            >
+              <div class="flex items-center gap-4">
+                <div class="flex gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <span
+                  class="font-code-md text-code-md text-on-surface-variant/60"
+                  id="file-name"
+                  >card_component.html</span
+                >
+              </div>
+              <button
+                class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm"
+                onclick="copyCode()"
+              >
+                <span class="material-symbols-outlined text-base"
+                  >content_copy</span
+                >
+                Copy
+              </button>
+            </div>
+            <div class="p-8 overflow-x-auto min-h-[400px]">
+              <!-- HTML Code -->
+              <pre
+                class="font-code-md text-code-md block"
+                id="code-html"
+              ><span class="text-[#ff79c6]">&lt;div</span> <span class="text-[#50fa7b]">class</span>=<span class="text-[#f1fa8c]">"profile-card"</span><span class="text-[#ff79c6]">&gt;</span>
+  <span class="text-[#ff79c6]">&lt;img</span> <span class="text-[#50fa7b]">src</span>=<span class="text-[#f1fa8c]">"avatar.jpg"</span> <span class="text-[#50fa7b]">alt</span>=<span class="text-[#f1fa8c]">"User Profile"</span><span class="text-[#ff79c6]">&gt;</span>
+  <span class="text-[#ff79c6]">&lt;div</span> <span class="text-[#50fa7b]">class</span>=<span class="text-[#f1fa8c]">"card-content"</span><span class="text-[#ff79c6]">&gt;</span>
+    <span class="text-[#ff79c6]">&lt;h2&gt;</span>DevArchitect<span class="text-[#ff79c6]">&lt;/h2&gt;</span>
+    <span class="text-[#ff79c6]">&lt;p&gt;</span>Full Stack Developer based in the Future.<span class="text-[#ff79c6]">&lt;/p&gt;</span>
+    <span class="text-[#ff79c6]">&lt;button</span> <span class="text-[#50fa7b]">id</span>=<span class="text-[#f1fa8c]">"followBtn"</span><span class="text-[#ff79c6]">&gt;</span>Connect<span class="text-[#ff79c6]">&lt;/button&gt;</span>
+  <span class="text-[#ff79c6]">&lt;/div&gt;</span>
+<span class="text-[#ff79c6]">&lt;/div&gt;</span></pre>
+              <!-- CSS Code -->
+              <pre
+                class="font-code-md text-code-md hidden"
+                id="code-css"
+              ><span class="text-[#50fa7b]">.profile-card</span> {
+  <span class="text-[#8be9fd]">background</span>: <span class="text-[#f1fa8c]">#171717</span>;
+  <span class="text-[#8be9fd]">border</span>: <span class="text-[#f1fa8c]">1px solid #262626</span>;
+  <span class="text-[#8be9fd]">border-radius</span>: <span class="text-[#f1fa8c]">0.25rem</span>;
+  <span class="text-[#8be9fd]">transition</span>: <span class="text-[#f1fa8c]">all 0.3s ease</span>;
+}
+
+<span class="text-[#50fa7b]">.profile-card:hover</span> {
+  <span class="text-[#8be9fd]">border-color</span>: <span class="text-[#f1fa8c]">#10b981</span>;
+  <span class="text-[#8be9fd]">box-shadow</span>: <span class="text-[#f1fa8c]">0 0 20px rgba(16, 185, 129, 0.2)</span>;
+}</pre>
+              <!-- JS Code -->
+              <pre
+                class="font-code-md text-code-md hidden"
+                id="code-js"
+              ><span class="text-[#ff79c6]">const</span> <span class="text-[#50fa7b]">button</span> = <span class="text-[#8be9fd]">document</span>.<span class="text-[#50fa7b]">getElementById</span>(<span class="text-[#f1fa8c]">'followBtn'</span>);
+
+<span class="text-[#50fa7b]">button</span>.<span class="text-[#50fa7b]">addEventListener</span>(<span class="text-[#f1fa8c]">'click'</span>, () <span class="text-[#ff79c6]">=&gt;</span> {
+  <span class="text-[#ff79c6]">const</span> <span class="text-[#50fa7b]">isFollowing</span> = <span class="text-[#50fa7b]">button</span>.<span class="text-[#8be9fd]">innerText</span> === <span class="text-[#f1fa8c]">'Connected'</span>;
+  
+  <span class="text-[#50fa7b]">button</span>.<span class="text-[#8be9fd]">innerText</span> = <span class="text-[#50fa7b]">isFollowing</span> ? <span class="text-[#f1fa8c]">'Connect'</span> : <span class="text-[#f1fa8c]">'Connected'</span>;
+  <span class="text-[#50fa7b]">button</span>.<span class="text-[#8be9fd]">style</span>.<span class="text-[#8be9fd]">backgroundColor</span> = <span class="text-[#50fa7b]">isFollowing</span> ? <span class="text-[#f1fa8c]">'#10b981'</span> : <span class="text-[#f1fa8c]">'#0566d9'</span>;
+});</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bento Grid Portfolio Preview -->
+      <section class="py-[120px] bg-surface-container-low" id="projects">
+        <div class="max-w-container-max mx-auto px-margin-desktop">
+          <h2 class="font-headline-lg text-headline-lg mb-12">
+            Destaques do <span class="text-primary">Portfólio</span>
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter h-auto md:h-[600px]"
+          >
+            <div
+              class="md:col-span-2 md:row-span-2 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden group"
+            >
+              <div class="h-2/3 overflow-hidden">
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="A sophisticated dashboard interface for a data analytics platform. The design features dark-mode aesthetics with vibrant emerald green and electric blue charts and graphs. The UI is clean, showing complex information through minimalist components, floating cards, and precise data visualizations. The lighting mimics a high-resolution screen in a dimly lit, modern tech office environment."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDivZNvlEn0A7q921T3tAaAxoQU1pKKndQ9BljDcqfutPYv1mmb9ZHHSXYoFP7l9MVL-azyMBuZWwTO6F3F9Im-CjSdWVK1CSq5KX9WHqmjIV_SLlmw_6Okg_2QjqPOvurLHe8sjyijeEA25nz0nXMYd6CQfIFLCxpEFTO5Wc1x6SVn2PgnKZWDAZS_OtBwehiaaXRsZC_mt3zYT-9MMJSvDCpDV_dzB9jc3cZuZ3DAq0iwm92aZRtuEqh_KZQtxqUkZM1hwaHbHwS1"
+                />
+              </div>
+              <div class="p-6">
+                <span
+                  class="font-label-caps text-label-caps text-primary mb-2 block"
+                  >FULL STACK • FINTECH</span
+                >
+                <h4 class="font-headline-sm text-headline-sm mb-2">
+                  OmniDash Platform
+                </h4>
+                <p class="text-on-surface-variant line-clamp-2">
+                  Painel analítico de alta performance construído com React,
+                  Node.js e PostgreSQL.
+                </p>
+              </div>
+            </div>
+            <div
+              class="md:col-span-2 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden flex group"
+            >
+              <div class="w-1/2 overflow-hidden">
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="A clean, minimalist e-commerce mobile app interface displayed on a sleek smartphone. The aesthetic focuses on white space and sharp green accents, showcasing product photography of high-end mechanical keyboards. The background is a soft, dark-mode studio setting with tech peripherals subtly blurred in the distance."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2hp1frW-WPQThfVhDtYsXSx4Ws60Pkw5OY2xyknmygTFfh1x4DyWOux-6ne5335Jixz2Yk9M7Hy1Acp2ozMDJtBB6FDxQL5BdDXY8-1MgfTGK9peBsvFjOITtWU6lcg-0lHcRb9getlCLAxjMegAzwrWIJg7wVPxLRKvaNSHCzNufj_ctxH0DDouga7CjASSCipKZs1udITwokYjA6WKuXCUCgiV7bHc7ScesUm1Hm3GdCjpG0G-jjg3T4aaj0wF-kb--UYKnCFrE"
+                />
+              </div>
+              <div class="w-1/2 p-6 flex flex-col justify-center">
+                <span
+                  class="font-label-caps text-label-caps text-primary mb-2 block"
+                  >E-COMMERCE</span
+                >
+                <h4 class="font-headline-sm text-headline-sm mb-2">
+                  KeyShop API
+                </h4>
+                <p class="text-on-surface-variant text-sm">
+                  Escalabilidade horizontal em ambiente AWS.
+                </p>
+              </div>
+            </div>
+            <div
+              class="md:col-span-1 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden group"
+            >
+              <div class="p-6 h-full flex flex-col justify-between">
+                <div>
+                  <span
+                    class="font-label-caps text-label-caps text-secondary mb-2 block"
+                    >MOBILE</span
+                  >
+                  <h4 class="text-lg font-bold mb-2">FitFlow App</h4>
+                </div>
+                <div
+                  class="flex items-center text-primary gap-2 font-bold text-sm"
+                >
+                  CASE STUDY
+                  <span class="material-symbols-outlined text-sm"
+                    >open_in_new</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="md:col-span-1 bg-primary text-on-primary rounded-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer hover:brightness-110 transition-all"
+            >
+              <span class="material-symbols-outlined text-4xl mb-4"
+                >add_circle</span
+              >
+              <span class="font-headline-sm text-headline-sm"
+                >Ver Mais Projetos</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-12 border-t border-outline-variant/20"
+    >
+      <div
+        class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter"
+      >
+        <div
+          class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2"
+        >
+          <span class="text-primary material-symbols-outlined">terminal</span>
+          DevArchitect
+        </div>
+        <p class="font-code-md text-code-md text-on-surface-variant/60">
+          © 2024 DevArchitect. Built with precision.
+        </p>
+        <div class="flex gap-6">
+          <a class="_blank" href="https://github.com/shopdoug8-del">GitHub</a>
+          <a
+            class="_blank"
+            href="https://www.linkedin.com/in/doug-shop-ab5b08403/"
+            >LinkedIn</a
+          >
+          <a
+            class="font-code-md text-code-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+            href="#"
+            >Twitter</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      function switchTab(lang) {
+        // Update tabs
+        const tabs = document.querySelectorAll(".tab-btn");
+        tabs.forEach((tab) => {
+          tab.classList.remove("bg-primary", "text-on-primary");
+          tab.classList.add("text-on-surface-variant");
+        });
+
+        const activeTab = document.getElementById(`tab-${lang}`);
+        activeTab.classList.remove("text-on-surface-variant");
+        activeTab.classList.add("bg-primary", "text-on-primary");
+
+        // Update code blocks
+        const codes = ["html", "css", "js"];
+        codes.forEach((c) => {
+          document.getElementById(`code-${c}`).classList.add("hidden");
+        });
+        document.getElementById(`code-${lang}`).classList.remove("hidden");
+
+        // Update file name
+        const names = {
+          html: "card_component.html",
+          css: "styles.css",
+          js: "interactions.js",
+        };
+        document.getElementById("file-name").innerText = names[lang];
+      }
+
+      function copyCode() {
+        const activeCode = document.querySelector("pre:not(.hidden)").innerText;
+        navigator.clipboard.writeText(activeCode).then(() => {
+          const btn = event.currentTarget;
+          const original = btn.innerHTML;
+          btn.innerHTML =
+            '<span class="material-symbols-outlined text-base text-primary">check</span> <span class="text-primary">Copied!</span>';
+          setTimeout(() => {
+            btn.innerHTML = original;
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>
