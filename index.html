@@ -499,11 +499,7 @@
         </div>
       </section>
       <!-- Bento Grid Portfolio Preview -->
-      <section
-        class="py-[120px] bg-surface-container-low"
-        id="projects"
-        onclick="Prefeitura()"
-      >
+      <section class="py-[120px] bg-surface-container-low" id="projects">
         <div class="max-w-container-max mx-auto px-margin-desktop">
           <h2 class="font-headline-lg text-headline-lg mb-12">
             Destaques do <span class="text-primary">Portfólio</span>
@@ -513,81 +509,75 @@
           >
             <div
               class="md:col-span-2 md:row-span-2 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden group"
+              onclick="ir(0)"
             >
               <div class="h-2/3 overflow-hidden">
                 <img
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   data-alt="A sophisticated dashboard interface for a data analytics platform. The design features dark-mode aesthetics with vibrant emerald green and electric blue charts and graphs. The UI is clean, showing complex information through minimalist components, floating cards, and precise data visualizations. The lighting mimics a high-resolution screen in a dimly lit, modern tech office environment."
-                  src="./img/image.png"
+                  src="./img/image2.png"
                 />
               </div>
               <div class="p-6">
                 <span
                   class="font-label-caps text-label-caps text-primary mb-2 block"
-                  >FULL STACK • FINTECH</span
-                >
+                ></span>
                 <h4 class="font-headline-sm text-headline-sm mb-2">
-                  OmniDash Platform
+                  Prefeitura de Arapiraca
                 </h4>
                 <p class="text-on-surface-variant line-clamp-2">
-                  Painel analítico de alta performance construído com React,
-                  Node.js e PostgreSQL.
+                 
+              
                 </p>
               </div>
             </div>
             <div
               class="md:col-span-2 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden flex group"
+              onclick="ir(1)"
             >
               <div class="w-1/2 overflow-hidden">
                 <img
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   data-alt="A clean, minimalist e-commerce mobile app interface displayed on a sleek smartphone. The aesthetic focuses on white space and sharp green accents, showcasing product photography of high-end mechanical keyboards. The background is a soft, dark-mode studio setting with tech peripherals subtly blurred in the distance."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2hp1frW-WPQThfVhDtYsXSx4Ws60Pkw5OY2xyknmygTFfh1x4DyWOux-6ne5335Jixz2Yk9M7Hy1Acp2ozMDJtBB6FDxQL5BdDXY8-1MgfTGK9peBsvFjOITtWU6lcg-0lHcRb9getlCLAxjMegAzwrWIJg7wVPxLRKvaNSHCzNufj_ctxH0DDouga7CjASSCipKZs1udITwokYjA6WKuXCUCgiV7bHc7ScesUm1Hm3GdCjpG0G-jjg3T4aaj0wF-kb--UYKnCFrE"
+                  src="./img/image.png"
                 />
               </div>
               <div class="w-1/2 p-6 flex flex-col justify-center">
                 <span
                   class="font-label-caps text-label-caps text-primary mb-2 block"
-                  >E-COMMERCE</span
-                >
+                ></span>
                 <h4 class="font-headline-sm text-headline-sm mb-2">
-                  KeyShop API
+                  Formulário
                 </h4>
                 <p class="text-on-surface-variant text-sm">
-                  Escalabilidade horizontal em ambiente AWS.
+                 
                 </p>
               </div>
             </div>
-            <div
-              class="md:col-span-1 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden group"
+           <div
+              class="md:col-span-2 bg-surface-container border border-outline-variant/30 rounded-lg overflow-hidden flex group"
+              onclick="ir(2)"
             >
-              <div class="p-6 h-full flex flex-col justify-between">
-                <div>
-                  <span
-                    class="font-label-caps text-label-caps text-secondary mb-2 block"
-                    >MOBILE</span
-                  >
-                  <h4 class="text-lg font-bold mb-2">FitFlow App</h4>
-                </div>
-                <div
-                  class="flex items-center text-primary gap-2 font-bold text-sm"
-                >
-                  CASE STUDY
-                  <span class="material-symbols-outlined text-sm"
-                    >open_in_new</span
-                  >
-                </div>
+              <div class="w-1/2 overflow-hidden">
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="A clean, minimalist e-commerce mobile app interface displayed on a sleek smartphone. The aesthetic focuses on white space and sharp green accents, showcasing product photography of high-end mechanical keyboards. The background is a soft, dark-mode studio setting with tech peripherals subtly blurred in the distance."
+                  src="./img/image3.png"
+                />
+              </div>
+              <div class="w-1/2 p-6 flex flex-col justify-center">
+                <span
+                  class="font-label-caps text-label-caps text-primary mb-2 block"
+                ></span>
+                <h4 class="font-headline-sm text-headline-sm mb-2">
+                  Calculadora
+                </h4>
+                <p class="text-on-surface-variant text-sm">
+                  
+                </p>
               </div>
             </div>
-            <div
-              class="md:col-span-1 bg-primary text-on-primary rounded-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer hover:brightness-110 transition-all"
-            >
-              <span class="material-symbols-outlined text-4xl mb-4"
-                >add_circle</span
-              >
-              <span class="font-headline-sm text-headline-sm"
-                >Ver Mais Projetos</span
-              >
+              </div>
             </div>
           </div>
         </div>
@@ -666,9 +656,12 @@
         });
       }
 
-      function Prefeitura() {
-        window.location.href =
-          "https://shopdoug8-del.github.io/siteprefeituraarapiraca/#";
+      function ir(link) {
+        links = [
+          "https://shopdoug8-del.github.io/siteprefeituraarapiraca/#",
+          "https://shopdoug8-del.github.io/formularioDev/", "https://shopdoug8-del.github.io/CalculadoraDev/"
+        ];
+        window.location.href = links[link];
       }
     </script>
   </body>
